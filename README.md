@@ -1,2 +1,32 @@
-# quadremesher-1.3-blender5-compat
-QuadRemesher 1.3 Blender Add-on — patched for Blender 5.0–5.2 compatibility (legacy add-on support)
+# QuadRemesher 1.3 Blender Bridge — Blender 5.0–5.2 Compatibility Patch
+
+This is a small compatibility update of the official **QuadRemesher 1.3 Blender Bridge**
+(originally developed by Maxime Rouca / Exoside, GPL-licensed) so it can be
+registered and loaded correctly in **Blender 5.0, 5.1, and 5.2**.
+
+## What changed
+- `__init__.py`: the unused imports `rna_keymap_ui` and `bl_operators.presets`
+  are now wrapped in `try/except`, so the add-on does not fail to load if
+  these internal Blender modules change in 5.x.
+- Bumped the internal add-on version to `1.3.1` to mark this build.
+- Core logic (FBX export/import, the remeshing engine launcher, UI panel,
+  Face Sets → Materials for Blender 4/5) was left unchanged — it relies on
+  stable APIs that are still valid in Blender 5.0–5.2.
+
+## Installation (Blender 5.0–5.2)
+Blender 5.x still supports old-style ("legacy") add-ons:
+
+1. `Edit > Preferences > Add-ons`
+2. Click the small ▾ arrow next to **Install** → **Install Legacy Add-on...**
+3. Select `quad_remesher_1_3_addon_Blender5.zip`
+4. Enable **Quad Remesher 1.3 Bridge**
+
+You still need the QuadRemesher **Engine** installed separately (see the
+included READ ME file for paths per OS: Windows / macOS / Linux).
+
+## Credits / License
+- Original add-on: © Maxime Rouca / Exoside — https://exoside.com/quadremesher/
+- Licensed under GPL v2 (or later), see license headers in the source files.
+- This repository only contains a small compatibility patch on top of the
+  original GPL-licensed code; it is **not** an official Exoside release.
+  Please check Exoside's website for the latest official version.
