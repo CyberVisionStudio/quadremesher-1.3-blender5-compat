@@ -21,8 +21,23 @@ Blender 5.x still supports old-style ("legacy") add-ons:
 3. Select `quad_remesher_1_3_addon_Blender5.zip`
 4. Enable **Quad Remesher 1.3 Bridge**
 
-You still need the QuadRemesher **Engine** installed separately (see the
-included READ ME file for paths per OS: Windows / macOS / Linux).
+## QuadRemesher Engine
+This add-on requires the **QuadRemesher Engine** (the actual remeshing
+algorithm), which is a separate closed-source component owned by Exoside
+and is **not included in this repository**.
+
+- The add-on will **automatically download and install** the engine the
+  first time you click "Remesh It" in Blender (requires an internet
+  connection).
+- Alternatively, you can get it manually from the official source:
+  https://exoside.com/quadremesher/
+
+You will also need a QuadRemesher license (trial or paid) from Exoside to
+use the remeshing functionality.
+
+## Requirements
+- Blender's built-in **FBX Import/Export** add-on must be enabled, as this
+  bridge uses FBX to exchange meshes with the engine.
 
 ## Credits / License
 - Original add-on: © Maxime Rouca / Exoside — https://exoside.com/quadremesher/
@@ -30,3 +45,7 @@ included READ ME file for paths per OS: Windows / macOS / Linux).
 - This repository only contains a small compatibility patch on top of the
   original GPL-licensed code; it is **not** an official Exoside release.
   Please check Exoside's website for the latest official version.
+
+## Disclaimer
+This is an unofficial, community-made compatibility patch, provided "as
+is" with no warranty. Use at your own risk.
